@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An organic chemistry learning guide to catalytic hydrogenation of benzene and cyclohexadiene derivatives.">
+<title>Catalytic Hydrogenation | Organic Chemistry</title>
+<style>
+:root{
+  --ink:#17243a;--muted:#58677d;--paper:#f5f7fb;--card:#fff;--line:#dfe6ef;
+  --blue:#2458a6;--blue-soft:#eaf2ff;--teal:#087f8c;--teal-soft:#e6f7f7;
+  --amber:#a85d08;--amber-soft:#fff4df;--green:#26734d;--green-soft:#e8f7ee;
+  --shadow:0 12px 32px rgba(29,49,78,.08);--radius:18px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:var(--blue)}
+header{background:linear-gradient(125deg,#142c50,#2458a6 64%,#087f8c);color:#fff;padding:clamp(2rem,6vw,4.5rem) 1rem 3rem}
+.hero,.layout{width:min(1120px,100% - 2rem);margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-weight:750;font-size:.78rem;color:#c6e5ff}
+h1{font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.08;letter-spacing:-.035em;margin:.6rem 0 1rem}
+header p{max-width:760px;color:#e7f1ff;font-size:1.08rem;margin:0}
+.pills{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.35rem}
+.pill{border:1px solid #ffffff55;background:#ffffff14;border-radius:99px;padding:.35rem .75rem;font-size:.86rem}
+.layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:1.5rem;padding:1.5rem 0 4rem}
+nav{position:sticky;top:1rem;align-self:start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+nav strong{display:block;margin:.2rem .55rem .5rem}
+nav a{display:block;text-decoration:none;color:var(--muted);padding:.48rem .55rem;border-radius:9px;font-size:.93rem}
+nav a:hover,nav a:focus{background:var(--blue-soft);color:var(--blue)}
+main{min-width:0}
+section,.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.1rem,3vw,1.8rem);margin-bottom:1.25rem;box-shadow:var(--shadow);scroll-margin-top:1rem}
+h2{font-size:clamp(1.35rem,3vw,1.8rem);line-height:1.25;margin:0 0 .85rem;letter-spacing:-.02em}
+h3{font-size:1.08rem;margin:1.15rem 0 .4rem}
+p{margin:.5rem 0 .85rem}
+.lead{font-size:1.06rem;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.mini{border:1px solid var(--line);border-radius:14px;padding:1rem;background:#fcfdff}
+.mini h3{margin:.1rem 0 .35rem}
+.callout{border-left:4px solid var(--teal);background:var(--teal-soft);padding:.85rem 1rem;border-radius:0 12px 12px 0;margin:1rem 0}
+.warn{border-left-color:var(--amber);background:var(--amber-soft)}
+.good{border-left-color:var(--green);background:var(--green-soft)}
+.eq{font:600 1.08rem/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;background:#f1f5fa;border:1px solid var(--line);padding:.7rem .9rem;border-radius:10px;overflow-wrap:anywhere}
+.molecule{border:1px solid var(--line);background:linear-gradient(180deg,#fff,#f8fbff);border-radius:14px;padding:.7rem;display:flex;align-items:center;justify-content:center;min-height:185px}
+.molecule svg{width:100%;max-width:340px;height:auto}
+.caption{font-size:.88rem;color:var(--muted);text-align:center;margin:.45rem 0 0}
+.legend{display:flex;gap:.85rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+.dot{display:inline-block;width:.65rem;height:.65rem;border-radius:50%;margin-right:.3rem;background:var(--blue)}
+table{width:100%;border-collapse:collapse;margin:.8rem 0;font-size:.94rem}
+th,td{text-align:left;padding:.7rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f1f5fa;font-weight:700}
+.steps{counter-reset:step;list-style:none;padding:0}
+.steps li{counter-increment:step;position:relative;padding:.15rem 0 1rem 3rem}
+.steps li:before{content:counter(step);position:absolute;left:0;top:0;background:var(--blue-soft);color:var(--blue);font-weight:800;width:2rem;height:2rem;display:grid;place-items:center;border-radius:50%}
+.tag{display:inline-block;font-size:.78rem;font-weight:750;letter-spacing:.03em;border-radius:6px;padding:.15rem .45rem;background:var(--blue-soft);color:var(--blue)}
+footer{color:var(--muted);font-size:.88rem;text-align:center;padding:0 1rem 2.5rem}
+button{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:.65rem .9rem;background:var(--blue);color:#fff;font-weight:700}
+button.secondary{background:#eaf0f8;color:var(--ink)}
+.controls{display:flex;gap:.6rem;flex-wrap:wrap;margin:.7rem 0}
+.answer{display:none;margin-top:.65rem;padding:.7rem .85rem;border-radius:10px;background:var(--green-soft);border:1px solid #bce5ca}
+.answer.show{display:block}
+@media(max-width:800px){.layout{grid-template-columns:1fr}nav{position:static}.grid3{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+@media(max-width:480px){.hero,.layout{width:min(100% - 1rem,1120px)}section,.card{padding:1rem}.molecule{min-height:145px}table{font-size:.85rem}th,td{padding:.5rem}}
+@media print{body{background:white}header{background:white;color:var(--ink);padding:1rem 0}header p,.eyebrow{color:var(--muted)}.pills,nav,.controls{display:none}.layout{display:block;width:100%;padding:0}section,.card{box-shadow:none;break-inside:avoid}a{color:inherit;text-decoration:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hero">
+    <div class="eyebrow">Organic chemistry · reaction guide</div>
+    <h1>Catalytic hydrogenation</h1>
+    <p>How hydrogen and a metal catalyst reduce carbon–carbon multiple bonds—and why an aromatic benzene ring behaves differently from a cyclohexadiene.</p>
+    <div class="pills"><span class="pill">Addition of H₂</span><span class="pill">Heterogeneous catalysis</span><span class="pill">Aromaticity matters</span></div>
+  </div>
+</header>
+<div class="layout">
+<nav aria-label="Page contents">
+  <strong>On this page</strong>
+  <a href="#overview">1. Core idea</a>
+  <a href="#structures">2. Molecule structures</a>
+  <a href="#mechanism">3. Mechanism</a>
+  <a href="#substrates">4. Benzene vs diene</a>
+  <a href="#rules">5. Rules and selectivity</a>
+  <a href="#worked">6. Worked examples</a>
+  <a href="#check">7. Quick check</a>
+</nav>
+<main>
+<section id="overview">
+  <h2>1. The core idea</h2>
+  <p class="lead">Catalytic hydrogenation adds hydrogen across unsaturated bonds. In a typical reaction, H₂ contacts a metal surface such as palladium, platinum, or nickel, where the H–H bond is activated and hydrogen atoms can add to the substrate.</p>
+  <div class="eq">C=C + H₂  →  C–C &nbsp; (metal catalyst)</div>
+  <div class="grid3" style="margin-top:1rem">
+    <div class="mini"><h3>Reagent</h3><p>Hydrogen gas, H₂. One mole of H₂ is consumed per ordinary C=C bond reduced.</p></div>
+    <div class="mini"><h3>Catalyst</h3><p>Common examples: Pd/C, Pt, or Raney Ni. The catalyst provides a surface pathway; it is not normally consumed stoichiometrically.</p></div>
+    <div class="mini"><h3>Outcome</h3><p>The π bond is removed and two C–H σ bonds form. The carbon framework usually remains intact.</p></div>
+  </div>
+  <div class="callout"><strong>Key distinction:</strong> a normal alkene is often hydrogenated readily. Benzene is aromatic and unusually stabilized, so hydrogenating its ring generally requires more forcing conditions than hydrogenating an isolated alkene.</div>
+</section>
+
+<section id="structures">
+  <h2>2. Recognize the structures</h2>
+  <p>These schematic line structures show the bond changes. Blue marks the unsaturated ring; teal marks the saturated product. The drawings are structural illustrations, not to scale.</p>
+  <div class="grid2">
+    <div class="mini">
+      <h3>Benzene → cyclohexane</h3>
+      <div class="molecule">
+      <svg viewBox="0 0 330 145" role="img" aria-label="Benzene ring with alternating double bonds and cyclohexane ring">
+        <g fill="none" stroke="#2458a6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M52 45 L84 26 L116 45 L116 82 L84 101 L52 82 Z"/>
+          <path d="M59 48 L81 35 M91 35 L109 46 M109 76 L91 91 M77 92 L59 80 M59 68 L59 54"/>
+        </g>
+        <text x="84" y="121" fill="#17243a" font-size="12" text-anchor="middle">Benzene</text>
+        <path d="M137 63 H187" stroke="#58677d" stroke-width="2.3" stroke-linecap="round"/>
+        <path d="M179 56 L187 63 L179 70" fill="none" stroke="#58677d" stroke-width="2.3"/>
+        <text x="162" y="48" fill="#58677d" font-size="11" text-anchor="middle">3 H₂</text>
+        <g fill="none" stroke="#087f8c" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M219 45 L251 26 L283 45 L283 82 L251 101 L219 82 Z"/>
+        </g>
+        <text x="251" y="121" fill="#17243a" font-size="12" text-anchor="middle">Cyclohexane</text>
+        <text x="162" y="139" fill="#58677d" font-size="10" text-anchor="middle">H₂ / metal catalyst</text>
+      </svg>
+      </div>
+      <p class="caption">Overall stoichiometry: C₆H₆ + 3 H₂ → C₆H₁₂</p>
+    </div>
+    <div class="mini">
+      <h3>1,3-Cyclohexadiene → cyclohexene → cyclohexane</h3>
+      <div class="molecule">
+      <svg viewBox="0 0 330 145" role="img" aria-label="Cyclohexadiene reduced to cyclohexene then cyclohexane">
+        <g fill="none" stroke="#2458a6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 48 L42 31 L66 48 L66 77 L42 94 L18 77 Z"/>
+          <path d="M24 47 L39 37 M60 53 L60 72"/>
+        </g>
+        <path d="M78 62 H107 M100 55 L107 62 L100 69" fill="none" stroke="#58677d" stroke-width="2"/>
+        <text x="92" y="47" fill="#58677d" font-size="10" text-anchor="middle">H₂</text>
+        <g fill="none" stroke="#087f8c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M119 48 L143 31 L167 48 L167 77 L143 94 L119 77 Z"/>
+          <path d="M125 47 L140 37"/>
+        </g>
+        <path d="M179 62 H208 M201 55 L208 62 L201 69" fill="none" stroke="#58677d" stroke-width="2"/>
+        <text x="193" y="47" fill="#58677d" font-size="10" text-anchor="middle">H₂</text>
+        <g fill="none" stroke="#087f8c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M220 48 L244 31 L268 48 L268 77 L244 94 L220 77 Z"/>
+        </g>
+        <text x="42" y="116" fill="#17243a" font-size="10.5" text-anchor="middle">Diene</text>
+        <text x="143" y="116" fill="#17243a" font-size="10.5" text-anchor="middle">Alkene</text>
+        <text x="244" y="116" fill="#17243a" font-size="10.5" text-anchor="middle">Alkane</text>
+      </svg>
+      </div>
+      <p class="caption">Each isolated C=C bond typically uses one equivalent of H₂.</p>
+    </div>
+  </div>
+  <div class="callout warn"><strong>Terminology note:</strong> “cyclohexadiene derivative” can mean a ring with two C=C bonds plus substituents. The exact product depends on which bonds are present, catalyst, conditions, and any other reducible groups.</div>
+</section>
+
+<section id="mechanism">
+  <h2>3. A simplified surface mechanism</h2>
+  <p>For a common heterogeneous catalyst, the reaction occurs at the metal surface. The exact details vary with metal, solvent, and substrate; this is a useful introductory model.</p>
+  <ol class="steps">
+    <li><strong>Adsorption:</strong> H₂ and the unsaturated molecule approach and bind to the catalyst surface.</li>
+    <li><strong>Hydrogen activation:</strong> H₂ dissociates on the metal surface into adsorbed hydrogen atoms (often written H*).</li>
+    <li><strong>π-bond interaction:</strong> the alkene or diene associates with the surface, making its π bond available for reaction.</li>
+    <li><strong>Hydrogen transfer:</strong> hydrogen atoms add to the two carbon atoms of a C=C bond. The π bond is converted to a C–C σ bond.</li>
+    <li><strong>Desorption:</strong> the saturated product leaves the surface, freeing catalyst sites for another cycle.</li>
+  </ol>
+  <div class="eq">H₂ + 2 * ⇌ 2 H*<br>alkene + 2 H* → alkane + 2 *</div>
+  <p class="caption">* denotes a vacant catalyst surface site; H* is hydrogen adsorbed on that surface.</p>
+  <div class="callout good"><strong>Stereochemical rule:</strong> because hydrogen atoms are delivered from a surface-bound arrangement, addition to a simple alkene is commonly described as <em>syn</em> addition. In rings, this can matter for the relative stereochemistry of substituents and newly added hydrogens.</div>
+</section>
+
+<section id="substrates">
+  <h2>4. Benzene compared with cyclohexadiene</h2>
+  <table>
+    <thead><tr><th>Feature</th><th>Benzene</th><th>Cyclohexadiene derivative</th></tr></thead>
+    <tbody>
+      <tr><td>Unsaturation</td><td>Six π electrons delocalized around the ring; aromatic.</td><td>Two localized C=C bonds in a typical cyclohexadiene; generally nonaromatic.</td></tr>
+      <tr><td>Hydrogen required for full ring saturation</td><td>3 equivalents H₂ per benzene ring.</td><td>2 equivalents H₂ per diene ring.</td></tr>
+      <tr><td>Typical outcome</td><td>Cyclohexane ring, if full hydrogenation is achieved.</td><td>Cyclohexene after one C=C reduction; cyclohexane after both are reduced.</td></tr>
+      <tr><td>Reactivity trend</td><td>Often more resistant because aromaticity is lost during hydrogenation.</td><td>Often more readily hydrogenated at its C=C bonds, depending on substitution and conditions.</td></tr>
+      <tr><td>Conditions</td><td>May require elevated H₂ pressure, temperature, or a suitable catalyst.</td><td>Often milder conditions can work, but do not assume selectivity without checking the specific substrate.</td></tr>
+    </tbody>
+  </table>
+  <div class="grid2">
+    <div class="mini">
+      <span class="tag">Aromaticity</span>
+      <h3>Why benzene is special</h3>
+      <p>Benzene is stabilized by a delocalized six-π-electron system. Hydrogenation converts its sp² ring carbons toward sp³ carbons and removes that aromatic system, so the reaction has a larger energetic barrier than reducing a typical isolated alkene.</p>
+    </div>
+    <div class="mini">
+      <span class="tag">Conjugated diene</span>
+      <h3>Why partial reduction may occur</h3>
+      <p>A diene has two π bonds. If conditions or catalyst selectivity allow, one can be reduced before the other. With ordinary excess hydrogen and an active catalyst, further reduction to the alkane is often possible.</p>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <h2>5. Practical rules and selectivity</h2>
+  <ul>
+    <li><strong>Count the bonds:</strong> each ordinary C=C reduced consumes one mole of H₂; each C≡C reduced completely to C–C consumes two moles of H₂.</li>
+    <li><strong>Do not equate “one ring” with “one equivalent”:</strong> benzene requires three H₂ equivalents to become cyclohexane because it has three formal π bonds in a Kekulé drawing.</li>
+    <li><strong>Aromatic rings are different:</strong> benzene's aromatic stabilization makes ring hydrogenation more demanding than ordinary alkene reduction.</li>
+    <li><strong>Catalysts are not interchangeable:</strong> Pd/C, Pt, and nickel can differ in activity and chemoselectivity. Catalyst poisoning and additives can alter behavior.</li>
+    <li><strong>Other functional groups may react:</strong> depending on conditions, nitro groups, alkynes, carbonyls, benzyl protecting groups, and other groups can be affected. Consider the whole molecule.</li>
+    <li><strong>Substituents matter:</strong> steric hindrance, adsorption geometry, solvent, pressure, temperature, and catalyst surface can affect rate and product distribution.</li>
+  </ul>
+  <div class="callout warn"><strong>Safety:</strong> hydrogen is highly flammable, and hydrogenation catalysts can be hazardous; some supported catalysts may ignite when dry or exposed to air after use. Laboratory hydrogenation requires appropriate equipment, ventilation, pressure controls, and approved procedures.</div>
+</section>
+
+<section id="worked">
+  <h2>6. Worked examples</h2>
+  <h3>Example A — benzene to cyclohexane</h3>
+  <div class="eq">C₆H₆ + 3 H₂ → C₆H₁₂</div>
+  <p>Three H₂ molecules are added overall. Each of the six ring carbons changes from approximately sp² to sp³ hybridization, and the aromatic π system is removed.</p>
+  <h3>Example B — 1,3-cyclohexadiene to cyclohexane</h3>
+  <div class="eq">C₆H₈ + 2 H₂ → C₆H₁₂</div>
+  <p>Two C=C bonds are reduced, so two H₂ equivalents are needed for complete saturation. With one equivalent under suitable selective conditions, a cyclohexene product may form, though product mixtures are possible.</p>
+  <h3>Example C — a substituted ring</h3>
+  <p>For a methyl-substituted cyclohexadiene, the ring's two C=C bonds can be reduced while the methyl group remains unchanged under typical alkene-hydrogenation conditions. If the substituent contains another reducible group, its fate must be evaluated separately.</p>
+</section>
+
+<section id="check">
+  <h2>7. Quick check</h2>
+  <p><strong>Question:</strong> How many equivalents of H₂ are required to convert one molecule of benzene fully to cyclohexane?</p>
+  <div class="controls"><button id="showAnswer" type="button">Reveal answer</button><button id="hideAnswer" class="secondary" type="button">Hide answer</button></div>
+  <div id="answer" class="answer" aria-live="polite"><strong>Answer: 3 equivalents of H₂.</strong> Benzene has three formal π bonds in a Kekulé representation, and full hydrogenation produces cyclohexane (C₆H₁₂) from benzene (C₆H₆).</div>
+  <hr style="border:0;border-top:1px solid var(--line);margin:1.3rem 0">
+  <p><strong>Try another:</strong> A cyclohexadiene has two C=C bonds. How many H₂ equivalents are needed to reduce both?</p>
+  <div class="controls"><button id="showAnswer2" type="button">Reveal answer</button><button id="hideAnswer2" class="secondary" type="button">Hide answer</button></div>
+  <div id="answer2" class="answer" aria-live="polite"><strong>Answer: 2 equivalents of H₂</strong> for complete reduction of the two C=C bonds to a saturated ring.</div>
+</section>
+</main>
+</div>
+<footer>
+  <p>Study guide for introductory organic chemistry. Reaction outcomes are condition-dependent; consult your course text or lab protocol for a specific substrate.</p>
+</footer>
+<script>
+(function(){
+  function toggle(showId, hideId, answerId){
+    var answer=document.getElementById(answerId);
+    document.getElementById(showId).addEventListener('click',function(){answer.classList.add('show');});
+    document.getElementById(hideId).addEventListener('click',function(){answer.classList.remove('show');});
+  }
+  toggle('showAnswer','hideAnswer','answer');
+  toggle('showAnswer2','hideAnswer2','answer2');
+})();
+</script>
+</body>
+</html>

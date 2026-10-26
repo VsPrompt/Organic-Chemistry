@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A concise organic chemistry study guide to catalytic hydrogenation of cyclohexadiene derivatives.">
+<title>Catalytic Hydrogenation of Cyclohexadiene Derivatives</title>
+<style>
+:root{color-scheme:light;--ink:#17243b;--muted:#526178;--paper:#f5f7fb;--card:#fff;--line:#dce4ef;--accent:#176b66;--accent2:#e6f5f1;--gold:#b86b13;--goldbg:#fff4df;--blue:#315ca8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+header{background:linear-gradient(125deg,#132b46,#176b66);color:white;padding:clamp(2rem,6vw,4.5rem) 1.25rem}
+.hero,main,footer{max-width:1080px;margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;font-weight:750;opacity:.85}
+h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;max-width:850px;margin:.7rem 0 1rem}
+header p{max-width:760px;font-size:1.08rem;color:#e1f3f1;margin:0}
+main{padding:1.5rem 1rem 3rem}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(1rem,2.5vw,1.5rem);box-shadow:0 5px 20px #1b345009;min-width:0}
+.span-12{grid-column:span 12}.span-8{grid-column:span 8}.span-6{grid-column:span 6}.span-4{grid-column:span 4}
+h2{font-size:1.35rem;line-height:1.25;margin:0 0 .8rem}
+h3{font-size:1.03rem;margin:1rem 0 .35rem}
+p{margin:.45rem 0 .75rem}
+ul,ol{padding-left:1.3rem;margin:.4rem 0}
+li{margin:.35rem 0}
+.kicker{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.callout{background:var(--accent2);border-left:4px solid var(--accent);padding:.9rem 1rem;border-radius:8px;margin:.8rem 0}
+.warning{background:var(--goldbg);border-left:4px solid var(--gold);padding:.9rem 1rem;border-radius:8px;margin:.8rem 0}
+.reaction{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;background:#f3f7fc;border:1px dashed #b8c8dc;border-radius:12px;padding:1rem;margin:.8rem 0;text-align:center}
+.molecule{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-weight:750;font-size:1.03rem}
+.arrow{font-size:1.5rem;color:var(--accent);font-weight:800}
+.small{font-size:.9rem;color:var(--muted)}
+.pill{display:inline-block;background:#eaf0fa;color:#244c8a;border-radius:999px;padding:.15rem .6rem;font-size:.78rem;font-weight:750;margin:.1rem .15rem .1rem 0}
+table{width:100%;border-collapse:collapse;margin:.7rem 0;font-size:.94rem}
+th,td{text-align:left;padding:.7rem .65rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f3f6fa}
+footer{padding:0 1rem 2rem;color:var(--muted);font-size:.86rem}
+@media(max-width:760px){.span-8,.span-6,.span-4{grid-column:span 12}.card{border-radius:14px}table{font-size:.86rem}th,td{padding:.55rem .4rem}}
+@media print{body{background:#fff}.card{box-shadow:none;break-inside:avoid}header{padding:1.5rem}.grid{gap:.6rem}main{padding-top:.8rem}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hero">
+    <div class="eyebrow">Organic chemistry · Study guide</div>
+    <h1>Catalytic Hydrogenation of Cyclohexadiene Derivatives</h1>
+    <p>How hydrogen adds to a ring containing two carbon–carbon double bonds, what controls selectivity, and how to predict the likely product without overgeneralizing.</p>
+  </div>
+</header>
+<main>
+<div class="grid">
+  <section class="card span-8">
+    <div class="kicker">Core idea</div>
+    <h2>What catalytic hydrogenation does</h2>
+    <p>Catalytic hydrogenation reduces a carbon–carbon double bond (C=C) by adding hydrogen across it. A typical catalyst is palladium on carbon (Pd/C), platinum (Pt), or nickel (Ni). With sufficient hydrogen and suitable conditions, both double bonds in a cyclohexadiene can be reduced to give a saturated cyclohexane ring.</p>
+    <div class="reaction" aria-label="General reaction">
+      <div><div class="molecule">Cyclohexadiene</div><div class="small">two C=C bonds</div></div>
+      <div class="arrow">+ 2 H₂ →</div>
+      <div><div class="molecule">Cyclohexane</div><div class="small">no C=C bonds</div></div>
+    </div>
+    <p class="small">This is a schematic overall transformation. Substituents, other reducible groups, catalyst choice, and reaction conditions can change the outcome.</p>
+  </section>
+  <section class="card span-4">
+    <div class="kicker">Remember</div>
+    <h2>Three takeaways</h2>
+    <ul>
+      <li><strong>Each C=C consumes one equivalent of H₂</strong> in the simple alkene-to-alkane reduction.</li>
+      <li>Hydrogen is commonly delivered to the adsorbed alkene from the catalyst surface, often described as <strong>syn addition</strong>.</li>
+      <li><strong>Conditions determine selectivity:</strong> do not assume a reaction stops after one double bond is reduced.</li>
+    </ul>
+  </section>
+  <section class="card span-6">
+    <h2>1. Follow the bonds</h2>
+    <p>For an unsubstituted 1,3- or 1,4-cyclohexadiene, full hydrogenation removes both π bonds. The two carbons of each former double bond each gain one hydrogen in the basic model.</p>
+    <div class="callout"><strong>Electron-level picture:</strong> the alkene and H₂ interact with a metal surface; the H–H bond is split and hydrogen atoms add to the alkene carbons. The C=C π bond becomes a C–C single bond.</div>
+    <p>For substituted rings, draw the product by converting the targeted C=C bond(s) to C–C single bonds, adding the appropriate hydrogen atoms, and retaining substituents unless another reaction pathway affects them.</p>
+  </section>
+  <section class="card span-6">
+    <h2>2. Partial vs. complete reduction</h2>
+    <table>
+      <thead><tr><th>Goal</th><th>General result</th><th>What to check</th></tr></thead>
+      <tbody>
+        <tr><td>Reduce one alkene</td><td>Cyclohexene-type product may remain</td><td>Is the second alkene less reactive, protected, or selectively addressed by the method?</td></tr>
+        <tr><td>Reduce both alkenes</td><td>Saturated cyclohexane derivative</td><td>Hydrogen supply, catalyst activity, time, pressure, and functional-group compatibility</td></tr>
+        <tr><td>Preserve another group</td><td>Potential chemoselective product</td><td>Other groups (e.g., alkyne, nitro, benzyl protecting group) may also be reduced or cleaved under some conditions.</td></tr>
+      </tbody>
+    </table>
+    <div class="warning"><strong>Key caution:</strong> “one equivalent of H₂” is a stoichiometric guide, not a guarantee of a single isolated product. Catalyst and substrate effects matter.</div>
+  </section>
+  <section class="card span-12">
+    <h2>3. Stereochemistry and substituted rings</h2>
+    <ul>
+      <li><strong>Syn delivery:</strong> on a metal surface, the two hydrogens added to a particular alkene are generally delivered from the same face in the standard mechanistic description.</li>
+      <li><strong>Face accessibility:</strong> substituents can make one face of a ring more hindered, potentially favoring adsorption and reaction from the less hindered face.</li>
+      <li><strong>Existing stereocenters:</strong> a substrate that already contains stereocenters can make its two faces nonequivalent, leading to diastereomeric products in unequal amounts.</li>
+      <li><strong>Do not overstate the rule:</strong> ring conformation, adsorption geometry, catalyst, solvent, and substituents can complicate a simple “syn” prediction. Analyze the specific structure.</li>
+    </ul>
+  </section>
+  <section class="card span-4">
+    <h2>Example A · Full reduction</h2>
+    <span class="pill">Two alkenes</span>
+    <p>A simple cyclohexadiene treated with excess H₂ and an active Pd/C catalyst under appropriate conditions commonly gives cyclohexane after both C=C bonds are reduced.</p>
+    <div class="reaction"><span class="molecule">C₆H₈</span><span class="arrow">+ 2 H₂ →</span><span class="molecule">C₆H₁₂</span></div>
+    <p class="small">Idealized stoichiometry for the unsubstituted ring; actual procedures depend on the substrate and setup.</p>
+  </section>
+  <section class="card span-4">
+    <h2>Example B · One alkene remains</h2>
+    <span class="pill">Partial reduction</span>
+    <p>If a method selectively reduces only one of the two double bonds, a cyclohexene derivative may result. This outcome should be claimed only when supported by the substrate’s reactivity and the chosen conditions or experimental data.</p>
+    <div class="callout">Ask: What evidence shows the reaction stopped at the mono-reduced stage?</div>
+  </section>
+  <section class="card span-4">
+    <h2>Example C · A substituent matters</h2>
+    <span class="pill">Chemoselectivity</span>
+    <p>A cyclohexadiene derivative bearing another reducible group may undergo more than alkene hydrogenation. For example, some catalytic conditions can hydrogenate an alkyne or remove a benzyl protecting group.</p>
+    <div class="callout">Inventory every functional group before predicting the product.</div>
+  </section>
+  <section class="card span-8">
+    <h2>4. How to solve a product-prediction question</h2>
+    <ol>
+      <li><strong>Count the C=C bonds.</strong> Identify which double bonds are intended to react.</li>
+      <li><strong>Read the conditions.</strong> Note catalyst (Pd, Pt, Ni, etc.), H₂ equivalents or pressure, solvent, temperature, and time if provided.</li>
+      <li><strong>Check other functional groups.</strong> Consider whether they may also be reduced or cleaved.</li>
+      <li><strong>Draw the connectivity first.</strong> Change reduced C=C bonds to single bonds and add hydrogen atoms.</li>
+      <li><strong>Assess stereochemistry.</strong> Consider syn addition, face selectivity, ring conformation, and pre-existing stereocenters.</li>
+      <li><strong>State uncertainty honestly.</strong> If conditions do not establish partial vs. complete reduction or stereoselectivity, note that more information is needed.</li>
+    </ol>
+  </section>
+  <section class="card span-4">
+    <h2>Quick checklist</h2>
+    <ul>
+      <li>How many double bonds?</li>
+      <li>Is H₂ supplied in excess?</li>
+      <li>Which catalyst and conditions?</li>
+      <li>Are other reducible groups present?</li>
+      <li>Does the product require stereochemical labels?</li>
+    </ul>
+  </section>
+  <section class="card span-12">
+    <h2>Bottom line</h2>
+    <p>Catalytic hydrogenation usually converts each accessible C=C bond into a C–C single bond by adding hydrogen. For a cyclohexadiene derivative, full reduction often gives a saturated cyclohexane derivative; partial reduction and stereochemical outcomes depend on substrate structure and conditions. The safest prediction comes from combining bond counting, functional-group compatibility, and a careful stereochemical analysis.</p>
+    <p class="small"><strong>Study note:</strong> This is a general conceptual summary, not a lab procedure. For an actual reaction, consult the specific substrate’s literature or validated experimental protocol and follow appropriate laboratory safety practices.</p>
+  </section>
+</div>
+</main>
+<footer>Self-contained HTML5 study sheet · Embedded CSS · Responsive layout · No external assets or libraries</footer>
+</body>
+</html>
